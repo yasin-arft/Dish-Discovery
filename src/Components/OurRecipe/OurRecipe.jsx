@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
+import CookTable from "../CookTable/CookTable";
 
 const OurRecipe = () => {
   const [recipes, setRecipes] = useState([]);
+  const [wantCooks, setWantCooks] = useState([]);
 
   useEffect(() => {
     fetch('recipe.json')
@@ -11,6 +13,9 @@ const OurRecipe = () => {
       .then(data => setRecipes(data));
   }, []);
 
+  const handleWantCookBtn = (recipe) => {
+    setWantCooks([...wantCooks, recipe]);
+  };
 
   return (
     <section className="py-24">
@@ -22,11 +27,20 @@ const OurRecipe = () => {
         {/* recipe container */}
         <div className="md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
           {
-            recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+            recipes.map(recipe => <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              handleWantCookBtn={handleWantCookBtn} />)
           }
         </div>
         {/* side bar container */}
         <aside className="md:w-2/5">
+          {/* want to cook */}
+          <div>
+            <h2 className='text-2xl font-semibold font-lexend text-center'>Want to cook: {wantCooks.length}</h2>
+            <hr className='mt-4 mb-6 opacity-10' />
+            <CookTable wantCooks={wantCooks} />
+          </div>
 
         </aside>
       </div>

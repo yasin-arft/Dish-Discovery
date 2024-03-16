@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { CiClock2 } from "react-icons/ci";
 import { AiOutlineFire } from "react-icons/ai";
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, handleWantCookBtn }) => {
   const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
-  console.log(recipe);
+
   return (
     <div>
       <div className="card p-6 h-full rounded-2xl border border-[#28282833] font-firaSans text-dark2">
@@ -15,7 +15,7 @@ const RecipeCard = ({ recipe }) => {
           <h2 className="card-title text-xl font-semibold font-lexend">{recipe_name}</h2>
           <p className=' text-dark3'>{short_description}</p>
           <hr className='mt-4 mb-6 opacity-10' />
-          <h5 className='text-lg font-medium font-lexend'>Ingredients: </h5>
+          <h5 className='text-lg font-medium font-lexend'>Ingredients: {ingredients.length}</h5>
           <ul className='grow text-dark3 pl-6'>
             {
               ingredients.map((ingredient, idx) => <li className='list-disc' key={idx}>{ingredient}</li>)
@@ -33,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
             </div>
           </div>
           <div className="card-actions mt-6">
-            <button className="btn bg-green font-firaSans text-dark rounded-full px-6">Want to Cook</button>
+            <button onClick={() => handleWantCookBtn(recipe)} className="btn bg-green font-firaSans text-dark rounded-full px-6">Want to Cook</button>
           </div>
         </div>
       </div>
@@ -43,6 +43,7 @@ const RecipeCard = ({ recipe }) => {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object,
+  handleWantCookBtn: PropTypes.func,
 };
 
 export default RecipeCard;
