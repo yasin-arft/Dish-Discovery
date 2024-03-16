@@ -1,6 +1,7 @@
 import './App.css'
 import Banner from './Components/Banner/Banner'
 import Header from './Components/Header/Header'
+import OurRecipe from './Components/OurRecipe/OurRecipe'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <main className="container mx-auto p-4">
         <Banner />
+        <OurRecipe />
       </main>
     </>
   )
