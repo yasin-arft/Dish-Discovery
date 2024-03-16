@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "recipe_image": "https://i.ibb.co/kxJ2tT3/chicken-curry.jpg",
+    "recipe_name": "Chicken Curry",
+    "short_description": "A classic and flavorful chicken curry dish.",
+    "ingredients": ["550 g chicken", "120 ml soy sauce", "200 g basil leaf", "400 g mushroom"],
+    "preparing_time": 30,
+    "calories": 320
+  },
+  {
+    "id": 2,
+    "recipe_image": "https://i.ibb.co/vHJKCvC/spaghetti-bolognese.jpg",
+    "recipe_name": "Spaghetti Bolognese",
+    "short_description": "A hearty Italian pasta dish with rich meat sauce.",
+    "ingredients": ["400 g spaghetti", "300 g ground beef", "500 ml tomato sauce", "100 g grated parmesan cheese"],
+    "preparing_time": 45,
+    "calories": 420
+  },
+  {
+    "id": 3,
+    "recipe_image": "https://i.ibb.co/8YbWh57/vegetable-stir-fry.jpg",
+    "recipe_name": "Vegetable Stir-Fry",
+    "short_description": "A quick and nutritious stir-fry dish packed with colorful veggies.",
+    "ingredients": ["300 g mixed vegetables (bell peppers, broccoli, carrots)", "200 g tofu", "50 ml soy sauce", "100 g rice noodles"],
+    "preparing_time": 25,
+    "calories": 250
+  },
+  {
+    "id": 4,
+    "recipe_image": "https://i.ibb.co/Jv1m4hM/caesar-salad.jpg",
+    "recipe_name": "Caesar Salad",
+    "short_description": "A classic Caesar salad with crisp romaine lettuce, croutons, and creamy dressing.",
+    "ingredients": ["200 g romaine lettuce", "100 g croutons", "50 g grated parmesan cheese", "100 ml Caesar dressing"],
+    "preparing_time": 15,
+    "calories": 180
+  },
+  {
+    "id": 5,
+    "recipe_image": "https://i.ibb.co/2KVYRgH/banana-smoothie.jpg",
+    "recipe_name": "Banana Smoothie",
+    "short_description": "A refreshing and creamy smoothie made with ripe bananas.",
+    "ingredients": ["2 ripe bananas", "250 ml milk", "50 g plain yogurt", "1 tbsp honey"],
+    "preparing_time": 10,
+    "calories": 150
+  },
+  {
+    "id": 6,
+    "recipe_image": "https://i.ibb.co/gMJCQY8/vegetable-soup.jpg",
+    "recipe_name": "Vegetable Soup",
+    "short_description": "A hearty and comforting vegetable soup, perfect for chilly days.",
+    "ingredients": ["500 g mixed vegetables (carrots, potatoes, celery, onions)", "1 liter vegetable broth", "2 cloves garlic", "50 g pasta"],
+    "preparing_time": 35,
+    "calories": 200
+  }
+]
