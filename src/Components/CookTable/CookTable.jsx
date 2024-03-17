@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import CookTableRow from '../CookTableRow/CookTableRow';
+import TableFoot from '../TableFoot/TableFoot';
 
 const CookTable = ({ recipes, handlePreparingBtn, isPreparing }) => {
 
@@ -21,22 +22,7 @@ const CookTable = ({ recipes, handlePreparingBtn, isPreparing }) => {
         }
       </tbody>
       {
-        (isPreparing && recipes.length) ? <tfoot>
-          <tr>
-            <td></td>
-            <td></td>
-            <td className='w-28'>
-              Total Time =
-              <br />
-              45 minutes
-            </td>
-            <td className='w-28'>
-              Total Calories =
-              <br />
-              1050 calories
-            </td>
-          </tr>
-        </tfoot> : <tfoot></tfoot>
+        (isPreparing && recipes.length) ? <TableFoot recipes={recipes}/> : false
       }
     </table>
   );
