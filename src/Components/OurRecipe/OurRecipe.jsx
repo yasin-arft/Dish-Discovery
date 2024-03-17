@@ -27,14 +27,14 @@ const OurRecipe = ({ handleToast }) => {
   }
 
   return (
-    <section className="py-24">
+    <section className="py-12 md:my-16 lg:py-20 xl:py-24">
       <div className="font-lexend text-dark text-center max-w-3xl mx-auto">
-        <h2 className="font-semibold  text-4xl">Our Recipes</h2>
-        <p className="mt-6 opacity-60">Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque. </p>
+        <h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">Our Recipes</h2>
+        <p className="mt-4 md:mt-6 opacity-60">Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque. </p>
       </div>
-      <div className="md:flex md:gap-8 mt-12">
+      <div className="lg:flex lg:gap-8 mt-6 md:mt-10 lg:mt-12">
         {/* recipe container */}
-        <div className="md:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
           {
             recipes.map(recipe => <RecipeCard
               key={recipe.id}
@@ -43,16 +43,16 @@ const OurRecipe = ({ handleToast }) => {
           }
         </div>
         {/* side bar container */}
-        <aside className="md:w-2/5">
+        <aside className="mt-8 lg:mt-0 lg:w-2/5">
           {/* want to cook */}
-          <div>
+          <div className="overflow-auto">
             <h2 className='text-2xl font-semibold font-lexend text-center'>Want to cook: {wantCooks.length}</h2>
             <hr className='mt-4 mb-6 opacity-10' />
             <CookTable recipes={wantCooks} handlePreparingBtn={handlePreparingBtn} isPreparing={false} />
           </div>
 
           {/* currently cooking */}
-          <div>
+          <div className="overflow-auto">
             <h2 className='text-2xl font-semibold font-lexend text-center mt-8'>Currently cooking: {currentlyCookings.length}</h2>
             <hr className='mt-4 mb-6 opacity-10' />
             <CookTable recipes={currentlyCookings} isPreparing={true} />
