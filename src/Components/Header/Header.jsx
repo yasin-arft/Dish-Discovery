@@ -18,7 +18,7 @@ const Header = () => {
                 <li><a>Search</a></li>
               </ul>
             </div>
-            <a className="btn btn-ghost font-bold text-xl md:text-3xl text-dark">Recipe Calories</a>
+            <a className="btn btn-ghost font-bold text-xl md:text-3xl text-dark">Dish Discovery</a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 opacity-70">

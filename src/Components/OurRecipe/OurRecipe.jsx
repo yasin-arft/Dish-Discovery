@@ -30,7 +30,7 @@ const OurRecipe = ({ handleToast }) => {
     <section className="py-12 md:my-16 lg:py-20 xl:py-24">
       <div className="font-lexend text-dark text-center max-w-3xl mx-auto">
         <h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">Our Recipes</h2>
-        <p className="mt-4 md:mt-6 opacity-60">Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque. </p>
+        <p className="mt-4 md:mt-6 opacity-60">Explore diverse culinary creations curated for every taste. From quick meals to gourmet delights, find inspiration for every occasion. Start your flavorful journey with Our Recipes today!</p>
       </div>
       <div className="lg:flex lg:gap-8 mt-6 md:mt-10 lg:mt-12">
         {/* recipe container */}
