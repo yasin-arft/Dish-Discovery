@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 const CookTableRow = ({ recipe, idx, handlePreparingBtn, isPreparing }) => {
   const { recipe_name, preparing_time, calories } = recipe;
-  console.log(isPreparing);
 
   return (
     <tr className='text-left space-x-6'>

@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import CookTable from "../CookTable/CookTable";
+import PropTypes from 'prop-types';
 
-const OurRecipe = () => {
+const OurRecipe = ({ handleToast }) => {
   const [recipes, setRecipes] = useState([]);
   const [wantCooks, setWantCooks] = useState([]);
   const [currentlyCookings, setCurrentlyCookings] = useState([]);
@@ -15,7 +16,8 @@ const OurRecipe = () => {
   }, []);
 
   const handleWantCookBtn = (recipe) => {
-    setWantCooks([...wantCooks, recipe]);
+    const isExist = wantCooks.find(item => item.id === recipe.id);
+    isExist ? handleToast() : setWantCooks([...wantCooks, recipe]);
   };
 
   const handlePreparingBtn = (recipe) => {
@@ -59,6 +61,10 @@ const OurRecipe = () => {
       </div>
     </section>
   );
+};
+
+OurRecipe.propTypes = {
+  handleToast: PropTypes.func,
 };
 
 export default OurRecipe;
