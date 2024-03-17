@@ -6,6 +6,7 @@ import CookTable from "../CookTable/CookTable";
 const OurRecipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [wantCooks, setWantCooks] = useState([]);
+  const [currentlyCookings, setCurrentlyCookings] = useState([]);
 
   useEffect(() => {
     fetch('recipe.json')
@@ -16,6 +17,12 @@ const OurRecipe = () => {
   const handleWantCookBtn = (recipe) => {
     setWantCooks([...wantCooks, recipe]);
   };
+
+  const handlePreparingBtn = (recipe) => {
+    const newWantCooks = wantCooks.filter(wantCook => recipe.id !== wantCook.id);
+    setWantCooks(newWantCooks);
+    setCurrentlyCookings([...currentlyCookings, recipe]);
+  }
 
   return (
     <section className="py-24">
@@ -39,9 +46,15 @@ const OurRecipe = () => {
           <div>
             <h2 className='text-2xl font-semibold font-lexend text-center'>Want to cook: {wantCooks.length}</h2>
             <hr className='mt-4 mb-6 opacity-10' />
-            <CookTable wantCooks={wantCooks} />
+            <CookTable recipes={wantCooks} handlePreparingBtn={handlePreparingBtn} isPreparing={false} />
           </div>
 
+          {/* currently cooking */}
+          <div>
+            <h2 className='text-2xl font-semibold font-lexend text-center mt-8'>Currently cooking: {currentlyCookings.length}</h2>
+            <hr className='mt-4 mb-6 opacity-10' />
+            <CookTable recipes={currentlyCookings} isPreparing={true} />
+          </div>
         </aside>
       </div>
     </section>

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-const CookTableRow = ({ wantCook, idx }) => {
-  const { recipe_name, preparing_time, calories } = wantCook;
+const CookTableRow = ({ recipe, idx, handlePreparingBtn, isPreparing }) => {
+  const { recipe_name, preparing_time, calories } = recipe;
+  console.log(isPreparing);
 
   return (
     <tr className='text-left space-x-6'>
@@ -9,16 +10,20 @@ const CookTableRow = ({ wantCook, idx }) => {
       <td className=''>{recipe_name}</td>
       <td>{preparing_time} minutes</td>
       <td>{calories} calories</td>
-      <td>
-        <button className='btn h-auto min-h-0 bg-green rounded-full py-3 font-lexend font-medium'>Preparing</button>
-      </td>
+      {
+        (!isPreparing) ? <td>
+          <button onClick={() => handlePreparingBtn(recipe)} className='btn h-auto min-h-0 bg-green rounded-full py-3 font-lexend font-medium'>Preparing</button>
+        </td> : <td></td>
+      }
     </tr>
   );
 };
 
 CookTableRow.propTypes = {
-  wantCook: PropTypes.object.isRequired,
+  recipe: PropTypes.object.isRequired,
   idx: PropTypes.number,
+  handlePreparingBtn: PropTypes.func,
+  isPreparing: PropTypes.bool,
 };
 
 export default CookTableRow;
